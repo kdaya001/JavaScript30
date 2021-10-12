@@ -58,6 +58,19 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
+  //https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event
+
+  document.addEventListener('keydown', logKey);
+
+  function logKey(e) {
+    let keypress =  e.which || e.keycode;
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    if (!audio) {
+      return false;
+    } else {
+      audio.play();
+    }
+  }
 
 </script>
 
